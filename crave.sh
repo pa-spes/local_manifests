@@ -15,4 +15,9 @@ git clone -b arrow-13.1 --depth 1 https://github.com/scas-projects/android_kerne
 [ ! -d "hardware/lineage/compat" ] && git clone -b lineage-20.0 https://github.com/LineageOS/android_hardware_lineage_compat.git hardware/lineage/compat
 # [ ! -d "packages/apps/GCamGOPrebuilt" ] && git clone -b arrow-13.1 https://github.com/ArrowOS-Devices/android_packages_apps_GCamGOPrebuilt.git packages/apps/GCamGOPrebuilt
 
+(cd packages/apps/WallpaperPicker2 && git fetch https://github.com/Kajal4414/android_packages_apps_WallpaperPicker2.git && git cherry-pick 18ef092 || git cherry-pick --abort)
+(cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 61c1e51 e1b424c || git cherry-pick --abort)
+(cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 || git cherry-pick --abort)
+(cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7 || git cherry-pick --abort)
+
 . build/envsetup.sh && lunch lineage_spes-user && make installclean && m bacon
