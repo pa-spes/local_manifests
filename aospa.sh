@@ -22,7 +22,7 @@ echo -e "${BLUE}Patching AOSPA Sources...${NC}"
 cherry_pick frameworks/av https://github.com/pa-spes/android_frameworks_av d41b1dc 5e50b0d
 cherry_pick frameworks/base https://github.com/pa-spes/android_frameworks_base ed52cc6^..d742321
 cherry_pick system/core https://github.com/pa-spes/android_system_core d64258a^..e1872bf
-cherry_pick vendor/aospa https://github.com/pa-spes/android_vendor_aospa b831e2d^..dcd4364
+cherry_pick vendor/aospa https://github.com/pa-spes/android_vendor_aospa b831e2d^..02f09b9
 cherry_pick packages/apps/Settings https://github.com/pa-spes/android_packages_apps_Settings b7851d1^..bcb96e5
 
 echo -e "${BLUE}Starting Build...${NC}"
