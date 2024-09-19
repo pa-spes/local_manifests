@@ -14,7 +14,7 @@ git clone -b arrow-13.1 --depth 1 https://github.com/scas-projects/android_kerne
 [ ! -d "hardware/xiaomi" ] && git clone -b lineage-20 https://github.com/LineageOS/android_hardware_xiaomi.git hardware/xiaomi
 [ ! -d "hardware/lineage/compat" ] && git clone -b lineage-20.0 https://github.com/LineageOS/android_hardware_lineage_compat.git hardware/lineage/compat
 
-(cd device/xiaomi/spes && git pull && git cherry-pick 503d4ac^..aee6729 && git cherry-pick d4204b2 )
+(cd device/xiaomi/spes && git pull && git cherry-pick 503d4ac d59c12a 952cfa3 524e2c1 948d94d aee6729)
 (cd packages/apps/WallpaperPicker2 && git fetch https://github.com/Kajal4414/android_packages_apps_WallpaperPicker2.git && git cherry-pick 18ef092 || git cherry-pick --abort)
 (cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 61c1e51 e1b424c || git cherry-pick --abort)
 (cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 || git cherry-pick --abort)
