@@ -24,7 +24,7 @@ cherry_pick frameworks/av https://github.com/pa-spes/android_frameworks_av b79ff
 cherry_pick frameworks/base https://github.com/pa-spes/android_frameworks_base 6d8a2f4^..59fa0f9
 cherry_pick system/core https://github.com/pa-spes/android_system_core d64258a^..e1872bf
 cherry_pick packages/modules/Connectivity https://github.com/pa-spes/android_packages_modules_Connectivity 401c14f
-cherry_pick vendor/aospa https://github.com/pa-spes/android_vendor_aospa 95ef8ba 3d12ad2 b9b4da4 3842e30
+cherry_pick vendor/aospa https://github.com/pa-spes/android_vendor_aospa 3d12ad2 b9b4da4 3842e30
 cherry_pick packages/apps/Settings https://github.com/pa-spes/android_packages_apps_Settings 734fa1d^..28e3041
 
 echo -e "${BLUE}Starting Build...${NC}"
