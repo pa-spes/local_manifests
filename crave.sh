@@ -1,22 +1,18 @@
 #!/bin/bash
 
 rm -rf .repo/local_manifest
-repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
+repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 --git-lfs
 /opt/crave/resync.sh
 
 rm -rf */xiaomi
 git config --global user.name "Kajal4414"
 git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
-git clone -b lineage-20.0 https://github.com/scas-projects/android_device_xiaomi_spes.git device/xiaomi/spes
+git clone -b arrow-13.1 https://github.com/scas-projects/android_device_xiaomi_spes.git device/xiaomi/spes
 git clone -b arrow-13.1 https://github.com/scas-projects/android_vendor_xiaomi_spes.git vendor/xiaomi/spes
 git clone -b arrow-13.1 --depth 1 https://github.com/scas-projects/android_kernel_xiaomi_spes.git kernel/xiaomi/spes
 
-[ ! -d "hardware/xiaomi" ] && git clone -b lineage-20 https://github.com/LineageOS/android_hardware_xiaomi.git hardware/xiaomi
-[ ! -d "hardware/lineage/compat" ] && git clone -b lineage-20.0 https://github.com/LineageOS/android_hardware_lineage_compat.git hardware/lineage/compat
+[ ! -d "hardware/xiaomi" ] && git clone -b arrow-13.1 https://github.com/ArrowOS-Devices/android_hardware_xiaomi.git hardware/xiaomi
+[ ! -d "hardware/arrow/compat" ] && git clone -b arrow-13.1 https://github.com/ArrowOS/android_hardware_arrow_compat.git hardware/arrow/compat
+[ ! -d "packages/apps/GCamGOPrebuilt" ] && git clone -b arrow-13.1 https://github.com/ArrowOS-Devices/android_packages_apps_GCamGOPrebuilt.git packages/apps/GCamGOPrebuilt
 
-(cd packages/apps/WallpaperPicker2 && git fetch https://github.com/Kajal4414/android_packages_apps_WallpaperPicker2.git && git cherry-pick 18ef092 || git cherry-pick --abort)
-(cd packages/apps/crDroidSettings && git fetch https://github.com/Kajal4414/android_packages_apps_crDroidSettings.git && git cherry-pick 61c1e51 e1b424c || git cherry-pick --abort)
-(cd frameworks/base && git fetch https://github.com/Kajal4414/android_frameworks_base.git && git cherry-pick d264ce2 3c2cc04 || git cherry-pick --abort)
-(cd vendor/lineage && git fetch https://github.com/Kajal4414/android_vendor_crdroid.git && git cherry-pick 0e584f7 || git cherry-pick --abort)
-
-. build/envsetup.sh && lunch lineage_spes-user && make installclean && m bacon
+. build/envsetup.sh && lunch arrow_spes-user && make installclean && m bacon
